@@ -109,6 +109,11 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
+function score() {
+    console.log("Your score:", humanScore);
+    console.log("Computer score:", computerScore);
+}
+
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toUpperCase();
     console.log("Your choice:", humanChoice);
@@ -157,9 +162,20 @@ function playRound(humanChoice, computerChoice) {
         
         console.log("she gothchu blushin twin");
     }
+    score();
 }
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
+// let humanSelection = getHumanChoice();
+// let computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+// playRound(humanSelection, computerSelection);
+
+function playGame(n) {
+    for (let i = 0; i < n; i++) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+}
+let n = prompt("How many rounds do you want to play?");
+playGame(n);
