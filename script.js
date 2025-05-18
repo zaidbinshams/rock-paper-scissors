@@ -2,7 +2,7 @@
 let userScore = 0;
 let computerScore = 0;
 
-let target = Number(prompt("Set target score"));// implement this using an input field later on
+// let target = Number(prompt("Set target score"));// implement this using an input field later on
 
 // references to DOM nodes
 const userChoiceButton = document.querySelectorAll("button.user-selection");
@@ -12,17 +12,14 @@ const update = document.querySelector("div.update");
 const userScoreDiv = document.querySelector("div.user-score");
 const computerScoreDiv = document.querySelector("div.computer-score");
 const mainContainer = document.querySelector("div.main-container");
+const inputField = document.querySelector("input.text");
+const inputButton = document.querySelector("input.submit");
+const targetDec = document.querySelector("div.target-selected");
 
 const restartButton = document.createElement("button");
 restartButton.setAttribute("class","restart");
 restartButton.textContent = "Restart";
 restartButton.style.alignSelf = "center";
-// restartButton.style.width = "150px";
-// restartButton.style.padding = "4px 0px";
-// restartButton.style.borderRadius = "4px";
-// restartButton.style.border = "2px solid black";
-// restartButton.fontFamily = "sans-serif";
-// restartButton.backgroundColor = "rgb(202, 194, 120)";
 
 // event listeners
 userChoiceButton.forEach((button) => {
@@ -32,6 +29,26 @@ userChoiceButton.forEach((button) => {
 restartButton.addEventListener("click", restartGame);
 
 // FUNCTIONS
+
+// set target
+function setTarget() {
+    inputButton.addEventListener("click", () => {
+        let temp = Number(inputField.value);
+        console.log(temp);
+        
+        console.log(typeof(temp));
+        console.log(typeof(typeof(temp)));
+        
+        inputField.value = null;
+        if (typeof(temp) !== "number" || temp === "NaN") {
+            targetDec.textContent = "Set a valid target!";
+            targetDec.style.textAlign = "center";
+            return;
+        } else return temp;
+    });
+}
+
+let target = setTarget();
 
 // computer choice
 function getComputerChoice() {
