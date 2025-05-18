@@ -16,6 +16,13 @@ const mainContainer = document.querySelector("div.main-container");
 const restartButton = document.createElement("button");
 restartButton.setAttribute("class","restart");
 restartButton.textContent = "Restart";
+restartButton.style.alignSelf = "center";
+// restartButton.style.width = "150px";
+// restartButton.style.padding = "4px 0px";
+// restartButton.style.borderRadius = "4px";
+// restartButton.style.border = "2px solid black";
+// restartButton.fontFamily = "sans-serif";
+// restartButton.backgroundColor = "rgb(202, 194, 120)";
 
 // event listeners
 userChoiceButton.forEach((button) => {
