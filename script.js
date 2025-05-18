@@ -31,24 +31,24 @@ restartButton.addEventListener("click", restartGame);
 // FUNCTIONS
 
 // set target
-function setTarget() {
-    inputButton.addEventListener("click", () => {
-        let temp = Number(inputField.value);
-        console.log(temp);
+// function setTarget() {
+//     inputButton.addEventListener("click", () => {
+//         let temp = Number(inputField.value);
+//         console.log(temp);
         
-        console.log(typeof(temp));
-        console.log(typeof(typeof(temp)));
+//         console.log(typeof(temp));
+//         console.log(typeof(typeof(temp)));
         
-        inputField.value = null;
-        if (typeof(temp) !== "number" || temp === "NaN") {
-            targetDec.textContent = "Set a valid target!";
-            targetDec.style.textAlign = "center";
-            return;
-        } else return temp;
-    });
-}
+//         inputField.value = null;
+//         if (typeof(temp) !== "number" || temp === "NaN") {
+//             targetDec.textContent = "Set a valid target!";
+//             targetDec.style.textAlign = "center";
+//             return;
+//         } else return temp;
+//     });
+// }
 
-let target = setTarget();
+// let target = setTarget();
 
 // computer choice
 function getComputerChoice() {
